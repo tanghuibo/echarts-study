@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="main" :style="{...styleSize}" />
+    <div id="main" :style="{ ...styleSize, display: 'inline-block' }" />
   </div>
 </template>
 
@@ -53,5 +53,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
