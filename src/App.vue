@@ -24,8 +24,8 @@
         :width="form.width"
         :height="form.height"
       />
-      <el-button @click="flash">刷新</el-button>
-      <el-button>下载</el-button>
+      <el-button @click="flash" icon="el-icon-refresh-left">刷新</el-button>
+      <el-button @click="download" icon="el-icon-download">下载</el-button>
     </div>
   </div>
 </template>
@@ -37,7 +37,7 @@
 </style>
 <script>
 import VueJsonEditor from "vue-json-editor";
-
+import imageUtils from '@/utils/imageUtils.js'
 import VCharts from "./components/VCharts";
 export default {
   components: {
@@ -45,9 +45,6 @@ export default {
     VueJsonEditor
   },
   mounted() {
-    setTimeout(() => {
-      this.option.title.text = "ECharts 高级示例";
-    }, 2000);
   },
   methods: {
     /**
@@ -58,6 +55,10 @@ export default {
       this.$nextTick(() => {
         this.showFlag = true;
       });
+    },
+    download() {
+      let canvas = document.querySelector("#main > div:nth-child(1) > canvas");
+      imageUtils.download(imageUtils.saveAsPNG(canvas));
     }
   },
   watch: {
