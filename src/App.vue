@@ -50,6 +50,9 @@ export default {
     }, 2000);
   },
   methods: {
+    /**
+     *  强制刷新
+     */
     flash() {
       this.showFlag = false;
       this.$nextTick(() => {
@@ -58,11 +61,13 @@ export default {
     }
   },
   watch: {
+    //宽度变化强制刷新
     "form.width": {
       handler() {
         this.flash();
       }
     },
+    //高度变化强制刷新
     "form.height": {
       handler() {
         this.flash();
