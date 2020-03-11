@@ -25,7 +25,18 @@
         :height="form.height"
       />
       <el-button @click="flash" icon="el-icon-refresh-left">刷新</el-button>
-      <el-button @click="download" icon="el-icon-download">下载</el-button>
+      <el-dropdown @command="download" style="margin-left: 10px;">
+        <el-button icon="el-icon-download">下载</el-button>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item
+            v-for="item in ['png', 'jpeg']"
+            :key="item"
+            :command="item"
+          >
+            {{ item }}
+          </el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
   </div>
 </template>
@@ -37,14 +48,12 @@
 </style>
 <script>
 import VueJsonEditor from "vue-json-editor";
-import imageUtils from '@/utils/imageUtils.js'
+import imageUtils from "@/utils/imageUtils.js";
 import VCharts from "./components/VCharts";
 export default {
   components: {
     VCharts,
     VueJsonEditor
-  },
-  mounted() {
   },
   methods: {
     /**
@@ -56,9 +65,12 @@ export default {
         this.showFlag = true;
       });
     },
-    download() {
+    /**
+     * 下载
+     */
+    download(type) {
       let canvas = document.querySelector("#main > div:nth-child(1) > canvas");
-      imageUtils.download(imageUtils.saveAsPNG(canvas));
+      imageUtils.download(imageUtils.saveToImg(canvas, type));
     }
   },
   watch: {

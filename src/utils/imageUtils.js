@@ -1,17 +1,7 @@
 export default {
-  // 保存成png格式的图片
-  saveAsPNG(canvas) {
-    return canvas.toDataURL("image/png");
-  },
-
-  // 保存成jpg格式的图片
-  saveAsJPG(canvas) {
-    return canvas.toDataURL("image/jpeg");
-  },
-
-  // 保存成bmp格式的图片  目前浏览器支持性不好
-  saveAsBMP(canvas) {
-    return canvas.toDataURL("image/bmp");
+  // 保存成图片 支持 png,jpg
+  saveToImg(canvas, type = 'png') {
+    return canvas.toDataURL(`image/${type}`);
   },
   /**
    * @author 下载
