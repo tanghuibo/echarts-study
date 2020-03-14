@@ -1,5 +1,7 @@
 # echarts-study
 
+echarts 学习工具
+
 ## Project setup
 ```
 yarn install
