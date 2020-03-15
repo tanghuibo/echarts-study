@@ -10,7 +10,7 @@ yarn run serve
 
 或直接打开在线网址:
 
-[https://github.com/tanghuibo/echarts-study](https://github.com/tanghuibo/echarts-study)
+[https://tanghuibo.github.io/echarts-study](https://tanghuibo.github.io/echarts-study)
 
 ## 界面
 
