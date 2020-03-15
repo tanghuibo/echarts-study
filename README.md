@@ -2,25 +2,18 @@
 
 echarts 学习工具
 
-## Project setup
-```
-yarn install
+## 运行方式
+
+```bash
+yarn run serve
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+或直接打开在线网址:
 
-### Compiles and minifies for production
-```
-yarn build
-```
+[https://github.com/tanghuibo/echarts-study](https://github.com/tanghuibo/echarts-study)
 
-### Lints and fixes files
-```
-yarn lint
-```
+## 界面
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![界面](./screenshots/all-view.png)
+
+填好 eachrts 数据，动态刷新界面，并可将生成的图表下载成 png 或 jpg 。
